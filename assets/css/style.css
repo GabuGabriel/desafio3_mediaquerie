@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+.main {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "nav"
+        "buscador"
+        "sidebar"
+        "contenido"
+        "paginador"
+        "footer"
+    ;
+}
+
+.nav {
+    display: flex;
+    grid-area: nav;
+    background-color:#CBC6FA;
+    align-items: center;
+    height: 4em;
+    justify-content: space-between;
+    padding: 0 0.5em 0 0.5em;
+    color: rgb(34, 34, 34);
+}
+
+.nav i {
+    margin-right: 0.5em;
+}
+
+.buscador {
+    grid-area: buscador;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 4em;
+    justify-content: space-evenly;
+    background-color: #9CB6F5;
+}
+
+.buscador select {
+    width: 80%;
+    height: 2em;
+    border-radius: 1px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CBC6FA;
+    font-size: 1.5;
+    font-weight: 500;
+}
+
+.sidebar p{
+    margin: 20px;
+}
+
+.sidebar p:hover{
+    color: blue;
+}
+
+.contenido {
+    grid-area: contenido;
+    display: grid;
+
+    align-items: center;
+    gap: 1em;
+    background-color:#ebf1f8;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0.2em 0.2em rgba(207, 205, 205, 0.308);
+    border-radius: 0.2em;
+    margin-top: 2em;
+    border: 0.5px solid grey;
+    height: 19em;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.card img{
+    padding: 0.5em;
+    border-radius: 20px;
+}
+
+.card h3{
+    text-align: center;
+}
+
+button{
+    width: 35%;
+    height: 2em;
+    margin-bottom: 0.5em;
+    border-radius: 2px;
+    background-color: #592AE8;
+    color: white;
+    font-size: 1em;
+
+    
+}
+
+.paginador {
+    grid-area: paginador;
+    background-color: #ebf1f8;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 1em;
+}
+
+.paginador li{
+    border: 1px solid black;
+    width: 30px;
+    text-align: center;
+    padding: 0.2em;
+    
+}
+
+.footer {
+    grid-area: footer;
+    text-align: center;
+    background-color: #CBC6FA;
+    height: 4em;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+@media(min-width:576px){
+.sidebar{
+    display: flex;
+
+}
+
+.main{
+    grid-template-areas: 
+    'nav buscador'
+    'sidebar contenido'
+    'footer paginador';
+    grid-template-columns: 2fr 10fr;
+}
+
+.fa-bars{
+    display: none;
+}
+
+.contenido{
+    grid-template-areas: 
+    'card card card ';
+}
+
+
+}
